@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adarsh Flour Mill</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Adarsh Flour Mill</h1>
+    <p>किराना स्टोर | Dry Fruits | Cold Pressed Oil | Atta Chakki</p>
+  </header>
+
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="products">
+    <h2>🛒 Our Products (हमारे उत्पाद)</h2>
+    <div class="product-grid">
+      <div class="product-card" onclick="showDetails('flour')">
+        <img src="images/atta.jpg" alt="Flour"/>
+        <h3>Fresh Flour (ताज़ा आटा)</h3>
+        <p>Click to see types of flour we provide</p>
+      </div>
+      <div class="product-card" onclick="showDetails('dryfruit')">
+        <img src="images/dryfruit.jpg" alt="Dry Fruits"/>
+        <h3>Dry Fruits (मेवे)</h3>
+        <p>Click to explore dry fruit varieties</p>
+      </div>
+      <div class="product-card" onclick="showDetails('oil')">
+        <img src="images/oil.jpg" alt="Cold Pressed Oil"/>
+        <h3>Cold Pressed Oils (कोल्ड प्रेस्ड तेल)</h3>
+        <p>Click to see available oils</p>
+      </div>
+    </div>
+
+    <div id="details-box" style="display:none; margin-top: 30px;"></div>
+  </section>
+
+  <section id="about">
+    <h2>👨‍👩‍👧‍👦 About Us (हमारे बारे में)</h2>
+    <p>
+      Adarsh Flour Mill is your one-stop shop for quality flour, grocery items, cold-pressed oils, and dry fruits.
+      We aim to serve purity and health in every product. हमारी दुकान पर शुद्धता और गुणवत्ता हमेशा बनी रहती है।
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>📞 Contact Us (संपर्क करें)</h2>
+    <p>📍 <a href="https://maps.google.com/?q=E-2 Shivam Appartment, Near Uma Bhavan, Bhatar Road, Surat" target="_blank">E-2 Shivam Appartment, Near Uma Bhavan, Bhatar Road, Surat</a></p>
+    <p>📞 Phone/WhatsApp: <a href="https://wa.me/916352801616" target="_blank">+91 6352 801 616</a></p>
+
+    <iframe src="https://www.google.com/maps?q=E-2%20Shivam%20Appartment%2C%20Near%20Uma%20Bhavan%2C%20Bhatar%20Road%2C%20Surat&output=embed" 
+            width="100%" height="250" style="border:0;" allowfullscreen loading="lazy"></iframe>
+
+    <h3>Send Inquiry</h3>
+    <p><em>Form submission integration coming soon...</em></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Adarsh Flour Mill | Designed by Shubham Maurya</p>
+  </footer>
+
+  <a href="https://wa.me/916352801616?text=Hello%20Adarsh%20Flour%20Mill%2C%20I%20have%20an%20inquiry." class="whatsapp-float" target="_blank">💬 Chat on WhatsApp</a>
+
+  <script>
+    function showDetails(type) {
+      const detailsBox = document.getElementById("details-box");
+      let content = "";
+
+      if (type === "flour") {
+        content = `
+          <h3>🌾 Flour Varieties We Offer:</h3>
+          <ul>
+            <li>🟢 Wheat Flour (गेहूं आटा)</li>
+            <li>🟡 Multigrain Flour (मल्टीग्रेन आटा)</li>
+            <li>🌽 Maize (Makka) Flour (मक्का आटा)</li>
+            <li>🌰 Bajra, Jowar, Ragi Flour (बाजरा, ज्वार, रागी)</li>
+          </ul>
+        `;
+      } else if (type === "dryfruit") {
+        content = `
+          <h3>🥜 Dry Fruits Available:</h3>
+          <ul>
+            <li>✅ Cashews (काजू)</li>
+            <li>✅ Almonds (बादाम)</li>
+            <li>✅ Raisins (किशमिश)</li>
+            <li>✅ Figs (अंजीर)</li>
+            <li>✅ Dates (खजूर)</li>
+            <li>✅ Walnuts (अखरोट)</li>
+          </ul>
+        `;
+      } else if (type === "oil") {
+        content = `
+          <h3>🛢️ Cold Pressed Oils:</h3>
+          <ul>
+            <li>🥥 Coconut Oil (नारियल तेल)</li>
+            <li>🥜 Groundnut Oil (मूंगफली तेल)</li>
+            <li>🌻 Sunflower Oil (सूरजमुखी तेल)</li>
+            <li>🧴 Sesame (Til) Oil (तिल का तेल)</li>
+          </ul>
+        `;
+      }
+
+      detailsBox.innerHTML = content;
+      detailsBox.style.display = "block";
+      detailsBox.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
